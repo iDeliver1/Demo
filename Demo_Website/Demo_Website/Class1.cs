@@ -17,7 +17,7 @@ namespace Demo_Website
         public void Build()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("file:///C:/Users/Ideliver/Downloads/Built1.html");
+            driver.Navigate().GoToUrl("file:///C:/Users/Ideliver/Downloads/Built3.html");
             driver.Manage().Window.Maximize();
         }
 
@@ -27,7 +27,9 @@ namespace Demo_Website
             driver.FindElement(By.Name("firstname")).SendKeys("iDeliver");
             driver.FindElement(By.Name("lastname")).SendKeys("iDeliver");
             driver.FindElement(By.Name("address")).SendKeys("India");
+            driver.FindElement(By.Name("company")).SendKeys("IDC");
             driver.FindElement(By.XPath("//input[@value='Submit']")).Click();
+
             driver.Close();
             driver.Quit();
         }
