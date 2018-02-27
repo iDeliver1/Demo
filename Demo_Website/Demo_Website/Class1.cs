@@ -24,7 +24,7 @@ namespace Demo_Website
         [Test, Order(2)]
         public void Run()
         {
-            string[] Value = { "John", "West" };
+            string[] Value = { "John", "West" ,"iDeliver"};
             int i = 0;
 
             IList<IWebElement> lst = driver.FindElements(By.XPath("//input[@type='text']"));
