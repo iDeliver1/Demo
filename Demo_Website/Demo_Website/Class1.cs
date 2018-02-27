@@ -17,14 +17,16 @@ namespace Demo_Website
         public void Build()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("file:///C:/Users/Ideliver/Downloads/Built1.html");
+            driver.Navigate().GoToUrl(@"E:\GitHub_LeanFT\Built1.html");
             driver.Manage().Window.Maximize();
         }
 
         [Test, Order(2)]
         public void Run()
         {
-            Array Data[] = {};
+            string[] Value = { "John", "West" };
+            int i=0;
+
             IList<IWebElement> lst = driver.FindElements(By.XPath("//input[@type='text']"));
                 foreach(IWebElement element in lst)
                 {
@@ -32,18 +34,15 @@ namespace Demo_Website
                     {
                         if (element.Displayed)
                         {
-                            element.SendKeys("");
+                            element.SendKeys(Value[i]);
                         }
                     }
                     catch(Exception e)
                     {
                         Console.WriteLine(e.Message);
                     }
-                
+                i++;
                 }
-            driver.FindElement(By.Name("firstname")).SendKeys("iDeliver");
-            driver.FindElement(By.Name("lastname")).SendKeys("iDeliver");
-            driver.FindElement(By.XPath("//input[@value='Submit']")).Click();
             driver.Close();
             driver.Quit();
         }
