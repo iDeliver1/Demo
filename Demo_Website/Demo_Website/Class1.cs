@@ -24,6 +24,23 @@ namespace Demo_Website
         [Test, Order(2)]
         public void Run()
         {
+            Array Data[] = {};
+            IList<IWebElement> lst = driver.FindElements(By.XPath("//input[@type='text']"));
+                foreach(IWebElement element in lst)
+                {
+                    try
+                    {
+                        if (element.Displayed)
+                        {
+                            element.SendKeys("");
+                        }
+                    }
+                    catch(Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                    }
+                
+                }
             driver.FindElement(By.Name("firstname")).SendKeys("iDeliver");
             driver.FindElement(By.Name("lastname")).SendKeys("iDeliver");
             driver.FindElement(By.XPath("//input[@value='Submit']")).Click();
