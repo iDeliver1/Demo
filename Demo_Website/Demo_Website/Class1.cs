@@ -46,7 +46,5 @@ namespace Demo_Website
             driver.Close();
             driver.Quit();
         }
-
-
     }
 }
