@@ -19,6 +19,14 @@ namespace Demo_Website
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(@"E:\GitHub_LeanFT\Built3.html");
             driver.Manage().Window.Maximize();
+            try
+            {
+                driver.FindElement(By.XPath("//xhtml:h1[contains(text(),'File not found')]"));
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
 
         [Test, Order(2)]
