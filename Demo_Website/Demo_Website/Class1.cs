@@ -17,7 +17,7 @@ namespace Demo_Website
         public void Build()
         {
             driver = new ChromeDriver();
-            driver.Navigate().GoToUrl("file:///C:/Users/Ideliver/Downloads/Built2.html");
+            driver.Navigate().GoToUrl(@"E:\GitHub_LeanFT\Built2.html");
             driver.Manage().Window.Maximize();
         }
 
