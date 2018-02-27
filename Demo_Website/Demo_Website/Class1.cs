@@ -43,6 +43,7 @@ namespace Demo_Website
                     }
                 i++;
                 }
+            driver.FindElement(By.XPath("//input[@value='Submit']")).Click();
             driver.Close();
             driver.Quit();
         }
