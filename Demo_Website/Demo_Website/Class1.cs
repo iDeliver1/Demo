@@ -24,9 +24,25 @@ namespace Demo_Website
         [Test, Order(2)]
         public void Run()
         {
-            driver.FindElement(By.Name("firstname")).SendKeys("iDeliver");
-            driver.FindElement(By.Name("lastname")).SendKeys("iDeliver");
-            driver.FindElement(By.Name("address")).SendKeys("India");
+            string[] Value = { "John", "West" };
+            int i = 0;
+
+            IList<IWebElement> lst = driver.FindElements(By.XPath("//input[@type='text']"));
+            foreach (IWebElement element in lst)
+            {
+                try
+                {
+                    if (element.Displayed)
+                    {
+                        element.SendKeys(Value[i]);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                i++;
+            }
             driver.FindElement(By.XPath("//input[@value='Submit']")).Click();
             driver.Close();
             driver.Quit();
