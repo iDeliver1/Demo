@@ -19,14 +19,14 @@ namespace Demo_Website
             driver = new ChromeDriver();
             driver.Navigate().GoToUrl(@"E:\Sourabh_CSharp\repo\GitHub_LeanFT\Built1.html");
             driver.Manage().Window.Maximize();
-            try
-            {
-                driver.FindElement(By.XPath("//xhtml:h1[contains(text(),'File not found')]"));
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                try
+                {
+                    driver.FindElement(By.XPath("//xhtml:h1[contains(text(),'File not found')]"));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
         }
 
         [Test, Order(2)]
