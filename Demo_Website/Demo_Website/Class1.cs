@@ -27,7 +27,6 @@ namespace Demo_Website
             {
                 Console.WriteLine(e.Message);
             }
-
         }
 
         [Test, Order(2)]
